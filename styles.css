@@ -14,10 +14,161 @@ body {
 
 /* Header styles */
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50, #3498db, #8e44ad, #e74c3c);
+    background-size: 400% 400%;
     color: white;
     padding: 1rem 0;
     text-align: center;
+    animation: slideIn 1s ease-out, crazyGradient 10s ease infinite;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before,
+header::after,
+header .emoji-1,
+header .emoji-2,
+header .emoji-3,
+header .emoji-4,
+header .emoji-5,
+header .emoji-6,
+header .emoji-7,
+header .emoji-8,
+header .emoji-9,
+header .emoji-10 {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.2;
+    animation: emojiSpin 5s linear infinite;
+}
+
+header::before {
+    content: "🔬";
+    top: 20%;
+    left: 20%;
+    animation-duration: 6s;
+    font-size: 4rem;
+}
+
+header::after {
+    content: "🧬";
+    top: 80%;
+    left: 80%;
+    animation-duration: 7s;
+    font-size: 3.5rem;
+}
+
+header .emoji-1 {
+    content: "🧪";
+    top: 50%;
+    left: 10%;
+    animation-duration: 8s;
+    font-size: 3rem;
+}
+
+header .emoji-2 {
+    content: "🔍";
+    top: 10%;
+    left: 50%;
+    animation-duration: 9s;
+    font-size: 3.5rem;
+}
+
+header .emoji-3 {
+    content: "📊";
+    top: 30%;
+    left: 70%;
+    animation-duration: 10s;
+    font-size: 3rem;
+}
+
+header .emoji-4 {
+    content: "🧫";
+    top: 70%;
+    left: 30%;
+    animation-duration: 11s;
+    font-size: 4rem;
+}
+
+header .emoji-5 {
+    content: "🧬";
+    top: 40%;
+    left: 60%;
+    animation-duration: 12s;
+    font-size: 3.5rem;
+}
+
+header .emoji-6 {
+    content: "🔬";
+    top: 60%;
+    left: 40%;
+    animation-duration: 13s;
+    font-size: 3rem;
+}
+
+header .emoji-7 {
+    content: "🧪";
+    top: 25%;
+    left: 75%;
+    animation-duration: 14s;
+    font-size: 3.5rem;
+}
+
+header .emoji-8 {
+    content: "📊";
+    top: 75%;
+    left: 25%;
+    animation-duration: 15s;
+    font-size: 3rem;
+}
+
+header .emoji-9 {
+    content: "🔍";
+    top: 15%;
+    left: 85%;
+    animation-duration: 16s;
+    font-size: 3.5rem;
+}
+
+header .emoji-10 {
+    content: "🧫";
+    top: 85%;
+    left: 15%;
+    animation-duration: 17s;
+    font-size: 4rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes crazyGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes emojiSpin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 header h1 {
